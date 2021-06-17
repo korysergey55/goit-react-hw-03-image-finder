@@ -2,11 +2,11 @@ import React from "react";
 import ImageGalleryItem from "../imageGalleryItem/ImageGalleryItem";
 import PropTypes from "prop-types";
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, taggleModal }) => {
  return (
   <>
    <ul className="ImageGallery">
-    <ImageGalleryItem images={images} />
+    <ImageGalleryItem images={images} taggleModal={taggleModal} />
    </ul>
   </>
  );
