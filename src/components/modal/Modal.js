@@ -1,7 +1,29 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Modal extends Component {
+ static propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  taggleModal: PropTypes.func.isRequired,
+ };
  state = {};
+
+ componentDidMount() {
+  window.addEventListener("keydown", this.handleEsc);
+  const body = document.querySelector("body");
+  body.style.overflow = "hidden";
+ }
+ componentWillUnmount() {
+  window.removeEventListener("keydown", this.handleEsc);
+  const body = document.querySelector("body");
+  body.style.overflow = "auto";
+ }
+
+ handleEsc = (e) => {
+  if (e.code === "Escape") {
+   this.props.taggleModal("");
+  }
+ };
 
  render() {
   return (
