@@ -17,7 +17,8 @@ ImageGallery.propTypes = {
      webformatURL: PropTypes.string.isRequired,
      tags: PropTypes.string.isRequired,
      id: PropTypes.number.isRequired,
- }))
+ })),
+ taggleModal: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

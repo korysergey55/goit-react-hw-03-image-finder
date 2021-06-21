@@ -38,9 +38,11 @@ class App extends Component {
     images: [...prevState.images, ...data.hits],
     loading: true,
    }));
-  } catch (error) {
+  } 
+  catch (error) {
    console.log(error);
-  } finally {
+  } 
+  finally {
    this.setState({ loading: false });
 
    window.scrollTo({
@@ -58,8 +60,8 @@ class App extends Component {
   this.setState((prevState) => ({ currentPage: prevState.currentPage + 1 }));
  };
 
- taggleModal = (image) => {
-  this.setState({ largeImageURL: image });
+ taggleModal = (bigImage) => {
+  this.setState({ largeImageURL: bigImage });
  };
 
  render() {

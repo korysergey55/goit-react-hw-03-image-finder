@@ -6,8 +6,7 @@ class Modal extends Component {
   largeImageURL: PropTypes.string.isRequired,
   taggleModal: PropTypes.func.isRequired,
  };
- state = {};
-
+ 
  componentDidMount() {
   window.addEventListener("keydown", this.handleEsc);
   const body = document.querySelector("body");
@@ -21,14 +20,14 @@ class Modal extends Component {
 
  handleEsc = (e) => {
   if (e.code === "Escape") {
-   this.props.taggleModal("");
+   this.props.taggleModal('');
   }
  };
 
  render() {
   return (
    <>
-    <div className="Overlay" onClick={() => this.props.taggleModal("")}>
+    <div className="Overlay" onClick={() => this.props.taggleModal('')}>
      <div className="Modal">
       <img src={this.props.largeImageURL} alt="pic" />
      </div>
